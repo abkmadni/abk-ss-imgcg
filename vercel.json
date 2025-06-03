@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/generate_caption.py",
+      "use": "@vercel/python",
+      "config": { "runtime": "python3.8" }
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/generate_caption",
+      "dest": "backend/generate_caption.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1"
+    }
+  ],
+  "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend"
+}
