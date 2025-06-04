@@ -5,6 +5,13 @@ The Image Caption Generator is a web application that allows users to upload or 
 - **Backend (Flask + TensorFlow)**: Extracts image features using Xception and generates captions using a trained LSTM model saved as an H5 file (`models/best_model_9.h5`).
 - **Frontend (React + Tailwind CSS)**: Provides a user-friendly interface for uploading/capturing images and displaying the generated captions.
 
+## Dataset
+This model was trained on the [Flickr8k Dataset](https://www.kaggle.com/datasets/adityajn105/flickr8k) (8,000 images with captions). Download and extract the dataset to reproduce training steps.
+
+## Training Notebook
+A Jupyter Notebook demonstrating data preprocessing, model training, and evaluation is available in the `training/` folder:
+- `training/training_caption_generator.ipynb`
+
 ## Folder Structure
 ```
 project-root/
@@ -25,7 +32,9 @@ project-root/
 │   │   └── index.jsx
 │   ├── index.html
 │   ├── package.json
-│   ├── vite.config.js
+│   └── vite.config.js
+├── training/
+│   └── training_caption_generator.ipynb
 ├── LICENSE
 └── README.md
 ```
