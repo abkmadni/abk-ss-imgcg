@@ -26,6 +26,7 @@ project-root/
 │   ├── index.html
 │   ├── package.json
 │   ├── vite.config.js
+├── LICENSE
 └── README.md
 ```
 
